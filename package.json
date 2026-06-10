@@ -1,0 +1,20 @@
+{
+  "name": "campania-taxi-service",
+  "version": "1.0.0",
+  "description": "Campania Taxi & Service — sito ufficiale",
+  "type": "module",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "dependencies": {
+    "express": "^5.2.1"
+  },
+  "devDependencies": {
+    "sharp": "^0.34.5"
+  }
+}

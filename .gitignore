@@ -1,5 +1,12 @@
-desktop-check.png
-mobile-check.png
-prototipo 7 pagina taxi giovanni campania taxi.png
-WhatsApp Image *.jpeg
+node_modules/
+.env
+.env.local
+.claude/
+PRODUCT.md
+mockup.html
+WhatsApp Image*
+taxi giugliano*
 interior-beige.jpg.jpeg
+*.png
+chrome-cache-localhost/
+chrome-profile-localhost/
