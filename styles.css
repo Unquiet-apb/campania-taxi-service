@@ -431,15 +431,8 @@ body::before {
 .section-head.center h2 { margin: 0 auto; }
 
 /* white-bg section overrides */
-.fleet .section-head h2,
-.assurance .section-head h2 {
-  color: var(--ink);
-}
-
-.fleet .section-head,
-.assurance .section-head {
-  border-bottom-color: rgba(10,10,10,0.08);
-}
+.fleet .section-head h2 { color: var(--ink); }
+.fleet .section-head    { border-bottom-color: rgba(10,10,10,0.08); }
 
 /* ─── SERVICES DOCK ──────────────────────────────────── */
 .service-dock {
@@ -638,10 +631,10 @@ body::before {
 
 /* ─── ASSURANCE ──────────────────────────────────────── */
 .assurance {
-  background: var(--paper);
-  color: var(--ink);
+  background: var(--ink-2);
+  color: var(--paper);
   padding: var(--pad-y) var(--pad-x);
-  border-top: 1px solid var(--paper-2);
+  border-top: 1px solid var(--line);
 }
 
 .assurance-copy {
@@ -654,44 +647,123 @@ body::before {
   font-size: clamp(1.8rem, 3.5vw, 3.5rem);
   font-weight: 900;
   letter-spacing: -0.03em;
-  color: var(--ink);
+  color: var(--paper);
 }
 
 .assurance-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1px;
-  background: rgba(10,10,10,0.07);
-  border: 1px solid rgba(10,10,10,0.07);
+  background: var(--line);
+  border: 1px solid var(--line);
 }
 
 .assurance-grid article {
-  background: var(--paper);
+  background: var(--ink-2);
   padding: 44px 36px;
+  position: relative;
+  overflow: hidden;
+}
+
+.assurance-grid article::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(to right, var(--gold), transparent);
 }
 
 .assurance-grid article strong {
   display: block;
-  font-size: 3.5rem;
+  font-size: clamp(3rem, 5vw, 5rem);
   font-weight: 900;
-  letter-spacing: -0.05em;
-  color: rgba(10,8,5,0.06);
+  letter-spacing: -0.04em;
+  color: var(--gold);
   line-height: 1;
-  margin-bottom: 14px;
+  margin-bottom: 18px;
+  font-family: "Newsreader", Georgia, serif;
 }
 
 .assurance-grid article h3 {
   font-size: 1rem;
   font-weight: 700;
   letter-spacing: -0.01em;
-  color: var(--ink);
+  color: var(--paper);
   margin-bottom: 10px;
 }
 
 .assurance-grid article p {
   font-size: 0.82rem;
-  color: rgba(10,10,10,0.5);
+  color: var(--dim);
   line-height: 1.7;
+}
+
+/* ─── REVIEWS ────────────────────────────────────────── */
+.reviews {
+  background: var(--ink);
+  padding: var(--pad-y) var(--pad-x);
+  border-top: 1px solid var(--line);
+}
+
+.reviews .section-head h2 { color: var(--paper); }
+.reviews .section-head     { border-bottom-color: var(--line); }
+
+.reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: var(--line);
+  border: 1px solid var(--line);
+}
+
+.reviews-grid article {
+  background: var(--ink);
+  padding: 40px 36px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  transition: background 250ms;
+}
+
+.reviews-grid article:hover { background: var(--ink-2); }
+
+.review-stars {
+  color: var(--gold);
+  font-size: 0.82rem;
+  letter-spacing: 3px;
+}
+
+.reviews-grid blockquote p {
+  font-size: 0.88rem;
+  color: rgba(242,238,234,0.62);
+  line-height: 1.82;
+  font-style: italic;
+}
+
+.reviews-grid blockquote p::before { content: '\201C'; }
+.reviews-grid blockquote p::after  { content: '\201D'; }
+
+.review-footer {
+  margin-top: auto;
+  padding-top: 16px;
+  border-top: 1px solid var(--line);
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.review-footer strong {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--paper);
+  letter-spacing: 0.01em;
+}
+
+.review-footer span {
+  font-size: 0.64rem;
+  color: var(--gold);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
 }
 
 /* ─── FINAL CTA ──────────────────────────────────────── */
@@ -920,7 +992,8 @@ body::before {
 
   .fleet-copy { position: static; }
 
-  .assurance-grid { grid-template-columns: 1fr; }
+  .assurance-grid  { grid-template-columns: 1fr; }
+  .reviews-grid    { grid-template-columns: 1fr; }
 
   .site-footer {
     grid-template-columns: 1fr 1fr;
