@@ -279,7 +279,7 @@ body::before {
 .hero-media img {
   width: 100%; height: 100%;
   object-fit: cover;
-  object-position: center 55%;
+  object-position: 40% 50%;
 }
 
 .hero-media::after {
