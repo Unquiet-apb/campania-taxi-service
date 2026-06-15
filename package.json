@@ -1,7 +1,7 @@
 {
   "name": "campania-taxi-service",
   "version": "1.0.0",
-  "description": "Campania Taxi & Service — sito ufficiale",
+  "description": "Sito ufficiale Campania Taxi & Service per taxi, NCC, transfer aeroporto Napoli e tour privati in Campania.",
   "type": "module",
   "main": "server.js",
   "scripts": {
